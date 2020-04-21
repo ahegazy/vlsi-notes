@@ -13,5 +13,5 @@ Digital IC design and vlsi notes
 - [Design optimization](digital-optimization/digital-optimization.md)
 
 ## Contribution
-- If you found any mistake you can report it by opening an [issue](issues)
-- You can modify, add anything and create a [pull request](pulls)
+- If you found any mistake you can report it by opening an issue
+- You can modify, add anything and create a pull request
