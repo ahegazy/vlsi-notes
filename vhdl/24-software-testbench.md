@@ -2,10 +2,10 @@
 source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16p2HXVcyEgGAFicXJI797jK) playlist on VHDL design.
 
 ## Testbench
-      * Testing is a whole different science and will be covered in a later module 
-      * At its core at least functional testing and verification of the design means that you wanna ensure that a design is performing the function you want it to perform
-      * You apply inputs to the unit under test, observe the outputs and compare them with the outputs you know are true
-      * It’s a vhdl design but its entity doesn’t have any ports, only an architecture with a single component the unit under test 
+- Testing is a whole different science and will be covered in a later module 
+- At its core at least functional testing and verification of the design means that you wanna ensure that a design is performing the function you want it to perform
+- You apply inputs to the unit under test, observe the outputs and compare them with the outputs you know are true
+- It’s a vhdl design but its entity doesn’t have any ports, only an architecture with a single component the unit under test 
 
 ## software testbench
 - Software testbench means it’ll be used only in software and not gonna pass through synthesis so it doesn’t need to be synthesizable so they allow you programming flexibility to generate inputs and assess the outputs
