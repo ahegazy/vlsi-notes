@@ -7,7 +7,7 @@ Digital IC design and vlsi notes
 - [Timing analysis](timing-analysis)
 - [CDC, RDC, Metastability](clock)
 - [Design flow](design-flow)
-- [Arithmatic circuits](arithmatic-circuits)
+- [Arithmetic circuits](arithmetic-circuits)
 - [Verilog](verilog)
 - [VHDL](vhdl)
 - [RTL](rtl)
