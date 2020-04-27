@@ -1,4 +1,5 @@
 # parallel prefix adders
+source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16qnuE-nw0RkUq0IwRkzqyhD) playlist on arithmetic circuits.
 
 ## Introduction
 - [group generate and propagate](7-group-generate-propagate.md) and dot operator are useful because if used progressivly they can be used to design some of the fastest adders available

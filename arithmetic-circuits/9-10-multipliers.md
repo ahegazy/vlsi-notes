@@ -1,4 +1,5 @@
 # Multipliers
+source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16qnuE-nw0RkUq0IwRkzqyhD) playlist on arithmetic circuits.
 
 ## Binary long multiplicaiton
 - Long multiplication in binary is done the same way as it's done in decimal by the calculation of partial products and the addition of the summands that result from this operation to produce a final product

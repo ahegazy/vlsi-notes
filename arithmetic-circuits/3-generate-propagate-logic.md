@@ -1,4 +1,5 @@
 # Generate-propagate logic 
+source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16qnuE-nw0RkUq0IwRkzqyhD) playlist on arithmetic circuits.
 
 ## Full adder generate propagate
 - same full adder truth table 

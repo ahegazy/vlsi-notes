@@ -1,8 +1,8 @@
 # Wallace tree mutliplier
-- Majority of effort expanded in multipliers is expanded in combining the summands to produces the product
-
+source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16qnuE-nw0RkUq0IwRkzqyhD) playlist on arithmetic circuits.
 
 ## Introduction
+- Majority of effort expanded in multipliers is expanded in combining the summands to produces the product
 - partial products have to be combined at every bit position using either half adder or full adder
 - It doesn't matter the order of combining the bits in every bit position, you should add all the bits in the current bit position and that's all that we care about
 - How can we combine all of these bits so we can end up with one product word at the end in the least number of steps possible

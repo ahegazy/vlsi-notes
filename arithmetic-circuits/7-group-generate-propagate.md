@@ -1,4 +1,5 @@
 # Group generate and propagate
+source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16qnuE-nw0RkUq0IwRkzqyhD) playlist on arithmetic circuits.
 
 ## Introduction 
 - Examining the expressions for carry outs at different bit positions we see patterns 

@@ -1,4 +1,5 @@
 # Carry select adder
+source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16qnuE-nw0RkUq0IwRkzqyhD) playlist on arithmetic circuits.
 
 ## Introduction
 - It was popular when the silicon area was considered cheap relative to needed performance, still pretty much true
