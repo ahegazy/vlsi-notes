@@ -5,14 +5,13 @@ Digital IC design and vlsi notes
 
 ## Contents
 - [Timing analysis](timing-analysis)
-- [CDC, RDC, Metastability](clock)
 - [Design flow](design-flow)
 - [Arithmetic circuits](arithmetic-circuits)
 - [Memories](memories)
--[Verilog](verilog)
+- [Verilog](verilog)
 - [VHDL](vhdl)
 - [RTL](rtl)
-- [Design optimization](digital-optimization/digital-optimization.md)
+- [Design optimization](design-optimization/design-optimization.md)
 
 ## Contribution
 - If you found any mistake you can report it by opening an issue
