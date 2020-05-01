@@ -6,10 +6,10 @@ Digital IC design and vlsi notes
 ## Contents
 - [Timing analysis](timing-analysis)
 - [Design flow](design-flow)
+- [VHDL](vhdl)
 - [Arithmetic circuits](arithmetic-circuits)
 - [Memories](memories)
 - [Verilog](verilog)
-- [VHDL](vhdl)
 - [RTL](rtl)
 - [Design optimization](design-optimization/design-optimization.md)
 
