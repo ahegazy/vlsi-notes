@@ -113,7 +113,7 @@
 
 ![row-decoder-predecoder-capacitance](imgs/row-decoder/row-decoder-predecoder-capacitance.png)
 
-    - It doesn't allow us to the final `and` gate with the initial `and` gates in a single chain because it separates the two
+- It doesn't allow us to the final `and` gate with the initial `and` gates in a single chain because it separates the two
     - for the majority of terms we are still using the same expression the we have
         - because for most of the stages of the predecoder nothing has changed
         - starting with the penultimate stage in the entire decoder or the ultimate stage in the predecoder things have to change cause it doesn't drive the input capacitance of the final decoder `nand` gate only
