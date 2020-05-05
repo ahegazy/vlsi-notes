@@ -1,4 +1,5 @@
 # EPROM and EEPROM
+- Source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16oYW_JFv1lptjfArS4eI4GC) playlist on memories.
 
 ## EPROM
 - Electrically programmable rom
