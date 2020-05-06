@@ -16,3 +16,9 @@ source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16p2HXVcyEgGAFicXJ
 
 ## User defined attributes 
    - Only useful for very large designs involves many design teams that need to move information between designs and work libraries
+
+```
+attribute state_encoding of state_type: type is "01 11 10 00";
+attribute sizeadder of adder1: component is very_big;
+attribute sizeadder of adder2: component is very_small;
+```

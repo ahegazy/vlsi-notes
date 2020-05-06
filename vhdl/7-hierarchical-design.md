@@ -14,8 +14,56 @@ source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16p2HXVcyEgGAFicXJ
    - Optional_label_name(recommended) : component_name/entity’s_name
    - Port map(Listing of input and output ports of the instance);
    - Each port of any instance has to be connected to either an internal signal or one of the input output ports of the layered design
-Declaring a component
 
 ## Example
-- Using a component/ instantiating an entity
-- ```code example ```
+
+- Declaring a component
+
+```
+architecture hierarchical of layered_adder is
+
+component sixteen_bit_adder is
+port(
+input_a: in std_logic_vector (16-1 downto 0);
+input_b: in std_logic_vector (16-1 downto 0);
+add_output: out std_logic_vector (17-1 downto 0)
+);
+end component;
+
+component seventeen_bit_adder is
+port(
+input_a: in std_logic_vector (17-1 downto 0);
+input_b: in std_logic_vector (17-1 downto 0);
+add_output: out std_logic_vector (18-1 downto 0)
+);
+end component;
+
+signal internal_inputa: std_logic_vector(17-1 downto 0);
+signal internal_inputb: std_logic_vector(17-1 downto 0);
+```
+
+- Using a component/instantiating an entity
+
+```
+    beign
+
+    adder1: sixteen_bit_adder
+    port(
+    input_a => external_inputa,
+    input_b => external_inputb,
+    add_output => internal_inputa);
+    
+    adder2: sixteen_bit_adder
+    port(
+    input_a => external_inputc,
+    input_b => external_inputd,
+    add_output => internal_inputb);
+    
+    adder3: seventeen_bit_adder
+    port(
+    input_a => internal_inputa,
+    input_b => internal_inputb,
+    add_output => external_output);
+```
+
+![component-arch-use](imgs/hierarchical-design/component-arch-use.png)

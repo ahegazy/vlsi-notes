@@ -12,6 +12,16 @@ source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16p2HXVcyEgGAFicXJ
    - A sensitivity list is a list of signals that lie in the parenthesis after the process statement, it’s a list of signals that sensitize the process, cause the process to execute whenever they change, so a process will execute once after simulation starts, and not gonna execute again until a change happens on a signal of the sensitivity list
    - In the example, R2 doesn’t take the current value of R1, it takes the previous value, because when R0 is assigned to R1 a transaction happened not an event
 
+```
+process_label: process(R0) // R0 is in the sensitivity list
+begin
+    R1 <= R0;
+    R2 <= R1;
+    R3 <= R2;
+end process; // change happens here
+```
+![transaction-to-event](imgs/process-transaction-event/transaction-to-event.png)
+
 ## Transactions and events
    - Event is an actual change in the value of the signal
    - When the value of a signal changes, in a register, of a wire that’s an event
@@ -23,3 +33,5 @@ source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16p2HXVcyEgGAFicXJ
    - If the sensitivity list of the process is fully populated, having (R0, R1, R2), when R0 is changed, the process is called -with 0 delay- and an event happens on R1, so the process is called again immediately -with 0 delay- so the value of R1 will update with the value of R0 which hasn’t changed, and the value of R2 will update with the new value of R1, and a new event of R2 happens and the process is called again and this all happens with 0 delay 
    - So when we have a fully populated sensitivity list, the code within the process became compinational 
    - A process with a deficient sensitivity list will be used to declare registers, A process with a complete sensitivity list will be used to declare complicated combinational blocks like state machines.
+
+![fully-populated-senstivity-list](imgs/process-transaction-event/fully-populated-senstivity-list.png)

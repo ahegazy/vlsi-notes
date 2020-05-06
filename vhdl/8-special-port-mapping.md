@@ -14,16 +14,38 @@ source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16p2HXVcyEgGAFicXJ
    - It allows the synthesizer to trim a lot of circuitry
    - It trims or remove every logic in the component that is connected to an open circuit or unconnected output
    - It’s a good practice to do so cause it allows it to minimize the resource usage
-   - This is the case with constant inputs, if for example an adder or multiplier have two constant inputs, the synthesizer will remove the hardware, and replace it with a constant value which is the result of the process. 
-  
+   - This is the case with constant inputs, if for example an adder or multiplier have two constant inputs, the synthesizer will remove the hardware, and replace it with a constant value which is the result of the process.
+
+![trimmed-circuits](imgs/special-port-mapping/trimmed-circuits.png)
 
 ## For generate
    - for  generate syntax to generate a bunch of instances
    - It’s not a loop, it’s a way of indicating that we are generating a very large number of the same component
-  
+
+```
+gen_reg: for generation_index int 0 to 15 generate
+
+DFFX : DFF
+port map(
+D => D(generation_index),
+Q => Q(generation_index),
+clk => clk);
+
+end generate;
+```
 
 ## Binding architecture to a component
    - Binding a certain architecture to a component while instantiating
    - Any instantiation will assume the last entity’s architecture unless otherwise stated
    - To choose other architecture, when declaring an instance write the architecture name between () after the entity’s name
-  
+
+```
+Add1: entity word.sixteen_bit_add(behavioral1)
+    port map(input_a => external_inputa,
+        input_b => external_inputb,
+        add_output => internal_inputa);
+Add2: entity word.sixteen_bit_add(behavioral2)
+    port map(input_a => external_inputc,
+        input_b => external_inputd,
+        add_output => internal_inputb);
+```
