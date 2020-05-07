@@ -40,17 +40,135 @@ source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16p2HXVcyEgGAFicXJ
 - input ports to the FSM should only be the status signals from the datapath, plus the clock and reset
 - output ports to the FSM should only be the control signals provided to the datapath
 
+```
+Library IEEE;
+Use ieee.std_logic_1164.all;
+
+Entity fsm is
+    port ( operation : in std_logic_vector(1 downto 0);
+        FU_done : in std_logic;
+        start : in std_logic;
+
+        EN1, EN2, EN3, EN4 : out std_logic;
+        EN_reg : out std_logic;
+        operation_sel : out std_logic_vector(1 downto 0);
+
+        clk, reset : in std_logic
+        );
+end fsm;
+
+architecture behavioral of fsm is
+    type state is (reset_state, await_start, operate_select, operate1, operate2, operate3, operate4, select, store);
+    signal current_state, next_state : state;
+begin
+```
+
 ### Next state process
 - next state process is a combinational process that determines the next state only, and doesn't update the state of the machine 
 - it has a complete sensitivity list, 
 - when others helps when the state signal contains unkown state like X,Z value so we go to the reset state because the state machine is in a weird state and doesn't know what to do 
 - use elses in conditions to avoid implicit latches 
-     
+
+```
+next_state: process (current_State, start, operation)
+begin
+    case current_state is
+        when reset_state =>
+            next_state <= await_start;
+        when await_start =>
+            if start = '1' then
+                next_state <= operate_select;
+            else
+                next_state <= await_state;
+            end if;
+        when operate_select =>
+            if operation = "00" then
+                next_state <= operate1;
+            elsif operation = "01" then
+                next_state <= operate2;
+            elsif operation = "10" then
+                next_state <= operate3;
+            elsif operation = "11" then
+                next_state <= operate4;
+            end if;
+        when operate1 =>
+            next_state <= select;
+        when operate2 =>
+            next_state <= select;
+        when operate3 =>
+            next_state <= select;
+        when operate4 =>
+            next_state <= select;
+        when select =>
+            next_state <= store;
+        when store =>
+            next_state <= await_start;
+        when others =>
+            next_state <= reset_state;
+    end case;
+end process;
+```
 ### state update process
 - a clocked process, when positive edgo of the clock it updates the current state with the next state value
-  
 
+```
+state_update: process(clk, reset)
+begin
+    if reset = '1' then
+        current_state <= reset_state;
+    elsif clk'event adnd clk='1' then
+        current_state <= next_state;
+    end if;
+end process;
+```
 ### outputs process 
 - outputs process is a combinational process, based on the current state it determines all the outputs of the state machine (all the control signals) even if they are trivial or don't care, we have to define them all, to avoid creating an implicit latch by exhaustivly listing all outputs 
 - it should have a when others defined at the end and define what happens to all output signals if an unkown state came, the safest way to do it is to copy everything from the reset state and put it in when others 
-     
+
+```
+outputs_process: process (current_state, operation)
+begin
+    case current_state is
+        when reset_state =>
+            EN1 <= '0';EN2 <= '0';EN3 <= '0';EN4 <= '0';
+            EN_reg <= '0';
+            operation_sel <= "00";
+        when await_start =>
+            EN1 <= '0';EN2 <= '0';EN3 <= '0';EN4 <= '0';
+            EN_reg <= '0';
+            operation_sel <= "00";
+        when operate_select =>
+            EN1 <= '0';EN2 <= '0';EN3 <= '0';EN4 <= '0';
+            EN_reg <= '0';
+            operation_sel <= "00";
+        when operate1 =>
+            EN1 <= '1';EN2 <= '0';EN3 <= '0';EN4 <= '0';
+            EN_reg <= '0';
+            operation_sel <= "00";
+        when operate2 =>
+            EN1 <= '0';EN2 <= '1';EN3 <= '0';EN4 <= '0';
+            EN_reg <= '0';
+            operation_sel <= "00";
+        when operate3 =>
+            EN1 <= '0';EN2 <= '0';EN3 <= '1';EN4 <= '0';
+            EN_reg <= '0';
+            operation_sel <= "00";
+        when operate4 =>
+            EN1 <= '0';EN2 <= '0';EN3 <= '0';EN4 <= '1';
+            EN_reg <= '0';
+            operation_sel <= "00";
+        when select =>
+            EN1 <= '0';EN2 <= '0';EN3 <= '0';EN4 <= '0';
+            EN_reg <= '0';
+            operation_sel <= operation;
+        when store =>
+            EN1 <= '0';EN2 <= '0';EN3 <= '0';EN4 <= '0';
+            EN_reg <= '1';
+            operation_sel <= "00";
+        when others =>
+            EN1 <= '0';EN2 <= '0';EN3 <= '0';EN4 <= '0';
+            EN_reg <= '0';
+            operation_sel <= "00";
+    end case;
+end process;
+```

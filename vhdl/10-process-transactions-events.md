@@ -13,12 +13,12 @@ source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16p2HXVcyEgGAFicXJ
    - In the example, R2 doesn’t take the current value of R1, it takes the previous value, because when R0 is assigned to R1 a transaction happened not an event
 
 ```
-process_label: process(R0) // R0 is in the sensitivity list
+process_label: process(R0) -- R0 is in the sensitivity list
 begin
     R1 <= R0;
     R2 <= R1;
     R3 <= R2;
-end process; // change happens here
+end process; -- change happens here
 ```
 ![transaction-to-event](imgs/process-transaction-event/transaction-to-event.png)
 

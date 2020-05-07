@@ -31,7 +31,7 @@ begin
     wait for 200ns;
     clk <= '0';
     wait for 200ns;
-end process; // a clock signal with period = 400ns
+end process; -- a clock signal with period = 400ns
 ```
 
 ### wait until condition;
@@ -60,7 +60,7 @@ begin
     else
         Q <= D;
     end if;
-    wait on sel, A, B, C, D; // sensitivity list
+    wait on sel, A, B, C, D; -- sensitivity list
 end process;
 ```
 
