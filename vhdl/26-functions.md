@@ -12,12 +12,28 @@ source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16p2HXVcyEgGAFicXJ
 - Values of variables or constants within a function can exist only within a function call and will reset between different calls
 - You cannot use wait statement in functions
 
+```
+function quad_calc(a,b,c,x : integer) return std_logic_vector(16 downto 0) is
+        variable power1 : integer := 2;
+        variable power2 : integer := 1;
+        variable power3 : integer := 0;
+        variable return_value : integer ;
+begin
+    return_value := a*x**power1+b*x**power2+c*x**power3;
+    return conv_std_logic_vector(return_value,17);
+end quad_calc;
+```
 
-## pure and impure functions 
+## pure and impure functions
 - Functions can be declared a pure or impure, majority are pure
 - Pure functions are functions whose return value is defined exclusively through its input arguments and its impact on the world happens only by its return value
-- Impure functions are functions whose return value depends on other variables outside the function 
-  
+- Impure functions are functions whose return value depends on other variables outside the function
+
+```
+impure function raise_to_power(constant x : integer) return integer is
+    return x**global_power;
+end raise_to_power;
+```
 
 ## synthesis
 - Functions are generally synthesizable

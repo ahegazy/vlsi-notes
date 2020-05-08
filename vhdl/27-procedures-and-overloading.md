@@ -3,14 +3,28 @@ source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16p2HXVcyEgGAFicXJ
 
 ## Procedure
 - Similar to functions with two differences
-- Procedures can use signal assignments 
-- Procedures can have arguments that are input, output or inout direction and doesn’t have a return cause it can return values as output signals  
+- Procedures can use signal assignments
+- Procedures can have arguments that are input, output or inout direction and doesn’t have a return cause it can return values as output signals
 - Procedures ins and outs are similar to entity’s ports in a way, they are the bridge between entities and functions in a way
-## overloading 
-- Common in programming languages 
+
+```
+procedure batch_calculate(
+    a, b, c : in integer;
+    signal d, e, f: out integer;
+    signal g : inout integer) is
+begin
+    d <= a*a;
+    e <= b*b;
+    f <= c*c;
+    g <= g*g;
+end batch_calculate;
+```
+
+## overloading
+- Common in programming languages
 - Redefining a function multiple times with different arguments lists
-- It’s legal and useful, the synthesizer look at the argument list used when the function is called and determine the definition 
-- Operators are special functions, operators in vhdl are overloaded cause you can say a+b with any type std_logic_vector, integer, and it’ll use the + with the different data types differently 
+- It’s legal and useful, the synthesizer look at the argument list used when the function is called and determine the definition
+- Operators are special functions, operators in vhdl are overloaded cause you can say a+b with any type std_logic_vector, integer, and it’ll use the + with the different data types differently
 ## predefined functions in std packages 
 - Conversion functions in std packages convert a type to another type, usually used to move between std_logic_vector and integers 
 
@@ -24,7 +38,7 @@ source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16p2HXVcyEgGAFicXJ
 - Has to be defined either for signed or unsigned numbers
 
 ### conv_signed and conv_unsigned
--  conv_signed(), conv_unsiged() 
+-  conv_signed(), conv_unsiged()
 - used to convert std_logic_vector types
 - they can accept integer numbers
 - Convert between unsigned and signed types and used when we mix between them in operation
