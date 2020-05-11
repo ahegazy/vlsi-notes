@@ -1,4 +1,5 @@
 # Column decoder
+- Source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16oYW_JFv1lptjfArS4eI4GC) playlist on memories.
 
 ## Memory array's auxiliary circuits
 - The cell exists in the array somewhere, the word line is activated (using row decoders)

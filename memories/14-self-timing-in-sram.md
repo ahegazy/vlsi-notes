@@ -1,4 +1,5 @@
 # Self timing in SRAM
+- Source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16oYW_JFv1lptjfArS4eI4GC) playlist on memories.
 
 ## Reading in memory
 - Whether your memory is synchronous or asynchronous

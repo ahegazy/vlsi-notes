@@ -1,4 +1,5 @@
 # Sense Amplifier
+- Source [this](https://www.youtube.com/playlist?list=PLyWAP9QBe16oYW_JFv1lptjfArS4eI4GC) playlist on memories.
 
 ## Introduction
 - The fundamental problem with all memory arrays specificaly with [SRAM](11-12-sram.md) is the contradiction between 
