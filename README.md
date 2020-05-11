@@ -9,6 +9,7 @@ Digital IC design and vlsi notes
 - [VHDL](vhdl)
 - [Arithmetic circuits](arithmetic-circuits)
 - [Memories](memories)
+- [Testing and Design for testability](testing)
 - [Verilog](verilog)
 - [RTL](rtl)
 - [Design optimization](design-optimization/design-optimization.md)
