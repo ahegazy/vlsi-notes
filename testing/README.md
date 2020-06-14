@@ -12,3 +12,4 @@
 11. [PCB design fabrication](15-pcb-design-fabrication.md)
 12. [Boundry scan and JTAG](16-boundry-scan-jtag.md)
 13. [Glitches and logical hazards](17-glitches-logical-hazards.md)
+14. [Static Hazarads](18-19-static-hazards.md)
