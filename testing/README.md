@@ -12,4 +12,6 @@
 11. [PCB design fabrication](15-pcb-design-fabrication.md)
 12. [Boundry scan and JTAG](16-boundry-scan-jtag.md)
 13. [Glitches and logical hazards](17-glitches-logical-hazards.md)
-14. [Static Hazarads](18-19-static-hazards.md)
+14. [Static Hazarads](18-19-20-21-static-hazards.md)
+15. [Dynamic Hazarads](23-dynamic-hazards.md)
+16. [Reliability of vlsi systems](24-25-reliability-of-vlsi-systems.md)
